@@ -2,7 +2,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { Container, Row, Col } from "react-bootstrap";
 import Hamburger from "hamburger-react";
-import styles from "./header.module.scss";
+import styles from "./Header.module.scss";
 import Sidebar from "./Sidebar/Sidebar";
 
 const Header = () => {
@@ -11,14 +11,21 @@ const Header = () => {
 
     const [isOpen, setOpen] = useState(false);
 
+    const toggleSidebar = () => {
+        setOpen(!isOpen);
+
+        // Toggle body overflow
+        document.body.style.overflow = !isOpen ? "auto" : "hidden";
+    };
+
     return (
         <>
-            <div className={styles.header}>
+            <div className={`${styles.header}`}>
                 <Container fluid>
                     <Row className="px-5">
                         <Col lg={2} className="d-flex align-items-center">
                             <div>
-                                <Hamburger toggled={isOpen} toggle={setOpen} />
+                                <Hamburger color="#f4f4f4" toggled={isOpen} toggle={setOpen} />
                             </div>
                         </Col>
                         <Col lg={8}>
@@ -27,7 +34,7 @@ const Header = () => {
                                 <h6 className="custom-text-light">Lorem ipsum</h6>
                             </div>
                         </Col>
-                        <Col>
+                        <Col className="d-flex align-items-center justify-content-end">
                             <div className="d-flex justify-content-end">
                                 <div className="text-center">
                                     <img src="/svg/user.svg" className={styles.userImg} alt="" />
@@ -39,7 +46,12 @@ const Header = () => {
                 </Container>
             </div>
 
-            {isOpen && <Sidebar />}
+            {isOpen && (
+                <>
+                    <div className="overlay" onClick={toggleSidebar}></div>
+                    <Sidebar />
+                </>
+            )}
         </>
     );
 };

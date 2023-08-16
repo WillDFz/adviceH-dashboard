@@ -1,0 +1,17 @@
+.card {
+    display: flex;
+    background: #f4f4f4;
+    margin-bottom: 1rem;
+    &:last-child{
+        margin-bottom: 0;
+    }
+}
+
+.cardImgContainer {
+    width: fit-content;
+    border-radius: 50%;
+    background: #a7a7a7;
+    .cardImg {
+        width: 45px;
+    }
+}
