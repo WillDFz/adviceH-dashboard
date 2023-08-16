@@ -1,0 +1,9 @@
+.sidebar {
+    max-width: fit-content;
+    height: 100vh;
+    position: absolute;
+    .navItem {
+        border-bottom: 1px solid #087b9a;
+        font-size: 0.75rem;
+    }
+}
