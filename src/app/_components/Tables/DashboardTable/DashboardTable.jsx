@@ -1,4 +1,10 @@
+"use client";
+import { useState } from "react";
+import json from "../../../json/appointments.json";
+
 const DashboardTable = ({ title }) => {
+    const [appointments, setAppointments] = useState(json);
+
     return (
         <div className="section-bg-light">
             <h4 className="mb-3">{title}</h4>
@@ -14,66 +20,18 @@ const DashboardTable = ({ title }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td className="thead">
-                            <input type="checkbox" />
-                        </td>
-                        <td>João Silva</td>
-                        <td>10/05/1985</td>
-                        <td>Dra. Ana Santos</td>
-                        <td>15/08/2023</td>
-                        <td>14:30</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" />
-                        </td>
-                        <td>Maria Oliveira</td>
-                        <td>22/09/1990</td>
-                        <td>Dr. Carlos Lima</td>
-                        <td>16/08/2023</td>
-                        <td>10:00</td>
-                    </tr>
-                    <tr>
-                        <td className="thead">
-                            <input type="checkbox" />
-                        </td>
-                        <td>João Silva</td>
-                        <td>10/05/1985</td>
-                        <td>Dra. Ana Santos</td>
-                        <td>15/08/2023</td>
-                        <td>14:30</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" />
-                        </td>
-                        <td>Maria Oliveira</td>
-                        <td>22/09/1990</td>
-                        <td>Dr. Carlos Lima</td>
-                        <td>16/08/2023</td>
-                        <td>10:00</td>
-                    </tr>
-                    <tr>
-                        <td className="thead">
-                            <input type="checkbox" />
-                        </td>
-                        <td>João Silva</td>
-                        <td>10/05/1985</td>
-                        <td>Dra. Ana Santos</td>
-                        <td>15/08/2023</td>
-                        <td>14:30</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" />
-                        </td>
-                        <td>Maria Oliveira</td>
-                        <td>22/09/1990</td>
-                        <td>Dr. Carlos Lima</td>
-                        <td>16/08/2023</td>
-                        <td>10:00</td>
-                    </tr>
+                    {appointments.map((appointment) => (
+                        <tr key={appointment.id}>
+                            <td className="thead">
+                                <input type="checkbox" />
+                            </td>
+                            <td>{appointment.patientName}</td>
+                            <td>{appointment.birthdate}</td>
+                            <td>{appointment.attendingDoctor}</td>
+                            <td>{appointment.appointmentDate}</td>
+                            <td>{appointment.appointmentTime}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>

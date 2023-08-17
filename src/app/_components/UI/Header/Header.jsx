@@ -15,7 +15,7 @@ const Header = () => {
     const toggleSidebar = () => {
         setOpen(!isOpen);
 
-        // Toggle body overflow
+        /** Toggle body overflow */ 
         document.body.style.overflow = !isOpen ? "auto" : "hidden";
     };
 
@@ -31,7 +31,7 @@ const Header = () => {
                         </Col>
                         <Col lg={8}>
                             <div className="text-center">
-                                <h1 className="custom-text-light text-capitalize">{pageName}</h1>
+                                <h3 className="custom-text-light text-capitalize">{pageName}</h3>
                                 <h6 className="custom-text-light">Lorem ipsum</h6>
                             </div>
                         </Col>
