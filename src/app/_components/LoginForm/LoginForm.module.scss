@@ -1,0 +1,19 @@
+.loginCard {
+    background: #fcfcfc;
+    border-radius: 8px 0 0 8px;
+    box-shadow: 0px 6px 10px -5px rgba(0, 0, 0, 0.06);
+}
+.loginLogoContainer{
+    border-radius: 0 8px 8px 0;
+}
+
+.eyeBtn{
+    width: 50px;
+    height: 42px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
