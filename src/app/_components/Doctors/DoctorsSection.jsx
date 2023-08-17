@@ -1,17 +1,22 @@
+import { useState } from "react";
 import SimpleCard from "./../UI/SimpleCard/SimpleCard";
 import styles from "./DoctorsSection.module.scss";
 
+import json from "../../json/doctors.json";
+
 const DoctorsSection = () => {
+    const [doctors, setDoctors] = useState(json);
     return (
         <section className={`${styles.doctorsSection} section-bg-light mb-4`}>
             <h4>Médicos</h4>
-            <SimpleCard img={"/svg/user.svg"} title={"Dr.Saulo"} subtitle={"Pediatra"} />
-            <SimpleCard img={"/svg/user.svg"} title={"Dr.Saulo"} subtitle={"Pediatra"} />
-            <SimpleCard img={"/svg/user.svg"} title={"Dr.Saulo"} subtitle={"Pediatra"} />
-            <SimpleCard img={"/svg/user.svg"} title={"Dr.Saulo"} subtitle={"Pediatra"} />
-            <SimpleCard img={"/svg/user.svg"} title={"Dr.Saulo"} subtitle={"Pediatra"} />
-            <SimpleCard img={"/svg/user.svg"} title={"Dr.Saulo"} subtitle={"Pediatra"} />
-            <SimpleCard img={"/svg/user.svg"} title={"Dr.Saulo"} subtitle={"Pediatra"} />
+            {doctors?.map((doctor, index) => (
+                <SimpleCard
+                    key={index}
+                    img={doctor?.image}
+                    title={doctor?.name}
+                    subtitle={doctor?.specialty}
+                />
+            ))}
         </section>
     );
 };
