@@ -30,7 +30,7 @@ const LoginForm = () => {
     return (
         <Container fluid>
             <Row className="justify-content-center">
-                <Col lg={4} className={`${styles.loginCard} p-4`}>
+                <Col lg={3} className={`${styles.loginCard} p-4`}>
                     <form className="d-flex flex-column" onSubmit={(e) => handleSubmit(e)}>
                         <h1 className="text-info-gradient text-center font-24 fw-bold my-4">
                             Área do Colaborador
@@ -121,7 +121,7 @@ const LoginForm = () => {
                     </form>
                 </Col>
                 <Col
-                    lg={3}
+                    lg={2}
                     className={`${styles.loginLogoContainer} d-flex justify-content-center align-items-center bg-info-gradient`}
                 >
                     <Image src={"/images/logo-placeholder.png"} alt="" width={100} height={50} />
