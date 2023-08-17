@@ -2,7 +2,7 @@ import styles from "./SimpleCard.module.scss"
 
 const SimpleCard = ({ img, title, subtitle }) => {
     return (
-        <div className={`${styles.card} p-2`}>
+        <div className={`${styles.card}`}>
             <div className={`${styles.cardImgContainer} me-3`}>
 
             <img src={img} className={styles.cardImg} alt="" />

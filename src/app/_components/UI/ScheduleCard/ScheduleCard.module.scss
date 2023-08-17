@@ -1,0 +1,27 @@
+.card {
+    width: 100%;
+    display: flex;
+    position: relative;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    background: #f4f4f4;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &:hover {
+        background: #eeeeee;
+    }
+}
+.actionsContainer {
+    position: absolute;
+    right: 0.75rem;
+    bottom: 6px;
+    .iconButton {
+        border: 0;
+        background: none;
+        img {
+            height: 1rem;
+        }
+    }
+}
